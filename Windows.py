@@ -44,16 +44,6 @@ def on_key_pressed(event):
     global typing_timer
     typing_timer = time.time()
 
-def toggle_window():
-    hwnd = win32gui.GetForegroundWindow()
-    current_show_state = win32gui.IsWindowVisible(hwnd)
-
-    if current_show_state:
-        win32gui.ShowWindow(hwnd, win32con.SW_HIDE)
-    else:
-        win32gui.ShowWindow(hwnd, win32con.SW_SHOW)
-
-keyboard.add_hotkey('alt+w+a', toggle_window)
 keyboard.on_press(on_key_pressed)
 
 while True:
